@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yoursite.com", // I NEED TO REPLACE THIS
+    url: "https://green-bean-cafe.vercel.app/",
     siteName: "GreenBean Café",
     title: "GreenBean Café - Artisan Coffee & Fresh Pastries",
     description:
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "A cozy spot serving artisan coffee and fresh pastries. Warm atmosphere, friendly service, and your new favorite hangout.",
     images: ["/images/gbname.png"],
   },
-  metadataBase: new URL("https://yoursite.com"), // I NEED TO REPLACE THIS
+  metadataBase: new URL("https://green-bean-cafe.vercel.app/"),
   alternates: {
     canonical: "/",
   },
