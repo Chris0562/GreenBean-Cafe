@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
 
@@ -111,6 +112,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 focus-within:outline-none">{children}</main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
