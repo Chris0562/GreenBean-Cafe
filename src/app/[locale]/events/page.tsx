@@ -1,36 +1,36 @@
-export default function EventsSection() {
-  const events = [
-    {
-      title: "Acoustic Sundays",
-      date: "Every Sunday · 10:00-13:00",
-      description:
-        "Enjoy live acoustic guitar with your morning espresso and croissant.",
-      requiresReservation: false,
-    },
-    {
-      title: "Latte Art Workshop",
-      date: "July 20 · 15:00-17:00",
-      description:
-        "Learn the basics of latte art from our baristas. Limited spots!",
-      requiresReservation: true,
-    },
-    {
-      title: "Tasting Tuesdays",
-      date: "Every Tuesday · 16:00-18:00",
-      description:
-        "Sample three rotating blends and discover new flavor profiles.",
-      requiresReservation: true,
-    },
-  ];
+import fs from "fs/promises";
+import path from "path";
+import { getLocale, getTranslations } from "next-intl/server";
+
+type Event = {
+  title: string;
+  date: string;
+  description: string;
+  requiresReservation: boolean;
+};
+
+async function getEvents(locale: string): Promise<Event[]> {
+  const filePath = path.join(
+    process.cwd(),
+    "public/locales",
+    locale,
+    "events.json"
+  );
+  const file = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(file);
+}
+
+export default async function EventsSection() {
+  const locale = await getLocale();
+  const t = await getTranslations("Events");
+  const events = await getEvents(locale);
 
   return (
     <section className="bg-light-cream text-deep-teal py-10 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-light tracking-wide mb-4">
-          Events at GreenBean Café
-        </h2>
+        <h2 className="text-3xl font-light tracking-wide mb-4">{t("title")}</h2>
         <p className="text-base font-light italic mb-10 opacity-80">
-          Come for the coffee, stay for the community.
+          {t("paragraph")}
         </p>
 
         <ul className="space-y-8">
@@ -46,7 +46,7 @@ export default function EventsSection() {
               </p>
               {event.requiresReservation && (
                 <p className="text-xs font-light italic text-light-cream/60">
-                  Reservation required - call or email to sign up.
+                  {t("reservation")}
                 </p>
               )}
             </li>

@@ -1,7 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function HomePage() {
+  const t = useTranslations("HomePage");
+
   return (
     <main className="text-deep-teal bg-light-cream">
       {/* Hero Section */}
@@ -20,7 +24,7 @@ export default function HomePage() {
               GreenBean Café
             </h1>
             <p className="text-base sm:text-lg md:text-xl font-light">
-              A warm welcome. A better brew.
+              {t("HeroParagraph")}
             </p>
           </div>
         </div>
@@ -29,13 +33,10 @@ export default function HomePage() {
       {/* About Section */}
       <section className="max-w-4xl mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6">
-          A Moment of Respite
+          {t("About.title")}
         </h2>
         <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
-          Nestled in the heart of the city, GreenBean Café brings the aroma of
-          authentic Italian coffee and pastries to a cozy, quiet space. Whether
-          you&apos;re starting your day or catching up with friends, we offer an
-          experience to savor.
+          {t("About.paragraph")}
         </p>
       </section>
 
@@ -44,12 +45,10 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6">
-              Crafted with Care
+              {t("Showcase.title")}
             </h2>
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
-              Our beans are slow-roasted to bring out the deepest flavors. Each
-              cup is poured with passion, and our selection of pastries is
-              hand-picked from traditional Italian recipes.
+              {t("Showcase.paragraph")}
             </p>
           </div>
           <div className="relative h-48 sm:h-56 lg:h-64 w-full rounded overflow-hidden shadow-lg order-1 lg:order-2">
@@ -67,7 +66,7 @@ export default function HomePage() {
       {/* Menu Preview */}
       <section className="max-w-5xl mx-auto py-3 sm:py-16 lg:py-20 px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 text-center">
-          On the Menu
+          {t("MenuPreview.title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           <div>
@@ -81,7 +80,7 @@ export default function HomePage() {
               />
             </div>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-center font-light">
-              Freshly baked pastries, daily
+              {t("MenuPreview.pastries")}
             </p>
           </div>
           <div>
@@ -95,7 +94,7 @@ export default function HomePage() {
               />
             </div>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-center font-light">
-              Espresso, cappuccino & more
+              {t("MenuPreview.coffee")}
             </p>
           </div>
         </div>
@@ -104,7 +103,7 @@ export default function HomePage() {
             href="/menu"
             className="inline-block bg-deep-teal text-light-cream px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-deep-teal/90 transition text-sm sm:text-base"
           >
-            View Full Menu
+            {t("BtnMenu")}
           </Link>
         </div>
       </section>
@@ -113,14 +112,14 @@ export default function HomePage() {
       <section className="bg-light-cream text-deep-teal py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 lg:mb-10">
-            Visit Us
+            {t("VisitUs")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Address Block */}
             <div className="bg-deep-teal text-light-cream rounded-xl sm:rounded-2xl px-4 sm:px-6 py-6 sm:py-8 shadow">
               <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
-                Our Location
+                {t("AddressTitle")}
               </h3>
               <p className="text-base sm:text-lg leading-relaxed">
                 GreenBean Café
@@ -134,14 +133,14 @@ export default function HomePage() {
             {/* Hours Block */}
             <div className="bg-deep-teal text-light-cream rounded-xl sm:rounded-2xl px-4 sm:px-6 py-6 sm:py-8 shadow">
               <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
-                Opening Hours
+                {t("Hours.title")}
               </h3>
               <p className="text-base sm:text-lg leading-relaxed">
-                Monday - Friday: 8:00 - 19:00
+                {t("Hours.monFri")}
                 <br />
-                Saturday: 9:00 - 18:00
+                {t("Hours.sat")}
                 <br />
-                Sunday: Closed
+                {t("Hours.sun")}
               </p>
             </div>
           </div>

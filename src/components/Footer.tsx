@@ -1,12 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function CafeFooter() {
+  const t = useTranslations("CafeFooter");
+
   return (
     <footer className="py-8 md:py-10 px-4 md:px-6 bg-deep-teal">
       <div className="max-w-4xl mx-auto text-center text-light-cream">
         <p className="text-base md:text-lg font-light italic tracking-wide opacity-90 mb-4 md:mb-6">
-          Where every cup tells a story
+          {t("title")}
         </p>
 
         {/* Social Media */}

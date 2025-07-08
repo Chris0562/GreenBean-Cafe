@@ -1,15 +1,17 @@
+import { useTranslations } from "next-intl";
+
 export default function ContactInfo() {
+  const t = useTranslations("HoursAndLocation");
+
   return (
     <section className="bg-light-cream text-deep-teal py-10 px-4">
       <div className="max-w-4xl mx-auto text-center space-y-6">
-        <h2 className="text-3xl font-light tracking-wide">Contact Us</h2>
-        <p className="italic text-base opacity-80">
-          We&apos;re always happy to hear from you.
-        </p>
+        <h2 className="text-3xl font-light tracking-wide">{t("title")}</h2>
+        <p className="italic text-base opacity-80">{t("paragraph")}</p>
 
         <div className="space-y-4 text-lg">
           <p>
-            <strong>Phone:</strong>{" "}
+            <strong>{t("Strong.phone")}</strong>{" "}
             <a
               href="tel:+391234567890"
               className="hover:underline hover:text-opacity-80"
@@ -27,10 +29,11 @@ export default function ContactInfo() {
             </a>
           </p>
           <p>
-            <strong>Address:</strong> 123 Main Street, New York
+            <strong>{t("Strong.address")}</strong> 123 Main Street, New York
           </p>
           <p>
-            <strong>Hours:</strong> Mon-Sat: 7:00-19:00 | Sun: 8:00-14:00
+            <strong>{t("Strong.hours")}</strong>
+            {t("hours")}
           </p>
         </div>
       </div>

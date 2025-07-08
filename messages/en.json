@@ -1,0 +1,61 @@
+{
+  "HomePage": {
+    "HeroParagraph": "A warm welcome. A better brew.",
+    "About": {
+      "title": "A moment of respite",
+      "paragraph": "Nestled in the heart of the city, GreenBean Café brings the aroma of authentic Italian coffee and pastries to a cozy, quiet space. Whether you're starting your day or catching up with friends, we offer an experience to savor."
+    },
+    "Showcase": {
+      "title": "Crafted with care",
+      "paragraph": "Our beans are slow-roasted to bring out the deepest flavors. Each cup is poured with passion, and our selection of pastries is hand-picked from traditional Italian recipes."
+    },
+    "MenuPreview": {
+      "title": "On the menu",
+      "pastries": "Freshly baked pastries, daily",
+      "coffee": "Espresso, cappuccino & more"
+    },
+    "BtnMenu": "View Full Menu",
+    "VisitUs": "Visit Us",
+    "AddressTitle": "Our location",
+    "Hours": {
+      "title": "Opening hours",
+      "monFri": "Monday - Friday: 8:00 - 19:00",
+      "sat": "Saturday: 9:00 - 18:00",
+      "sun": "Sunday: Closed"
+    }
+  },
+  "About": {
+    "title": "A quiet corner in the city",
+    "paragraph1": "Step away from the rush and into our warm embrace. Here, time moves a little slower, conversations flow a little deeper, and every cup tells a story.",
+    "paragraph2": "Whether you're seeking solitude with a good book or connection with old friends, our space invites you to pause, breathe, and savor the simple pleasure of a perfectly crafted moment."
+  },
+  "Menu": {},
+  "HoursAndLocation": {
+    "title": "Contact Us",
+    "paragraph": "We're always happy to hear from you",
+    "Strong": {
+      "phone": "Phone:",
+      "address": "Address:",
+      "hours": "Hours:"
+    },
+    "hours": " Mon - Fri: 8:00 - 19:00 | Sat: 9:00 - 19:00 | Sun: 8:00 - 14:00"
+  },
+  "Events": {
+    "title": "Events at GreenBean Café",
+    "paragraph": "Come for the coffee, stay for the community.",
+    "reservation": "Reservation required - call or email to sign up"
+  },
+  "CafeFooter": {
+    "title": "Where every cup tells a story"
+  },
+  "Navbar": {
+    "about": "About Us",
+    "menu": "Menu",
+    "hoursAndLocation": "Hours and location",
+    "events": "Events"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "paragraph": "The page you're looking for doesn't exist or has been moved."
+  }
+}

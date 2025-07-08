@@ -1,4 +1,7 @@
-export default function NotFound() {
+import { useTranslations } from "next-intl";
+
+export default function NotFoundPage() {
+  const t = useTranslations("NotFound");
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-light-cream">
       <div className="text-center max-w-md mx-auto">
@@ -6,10 +9,10 @@ export default function NotFound() {
           404
         </h1>
         <h2 className="text-xl md:text-2xl font-semibold text-deep-teal mb-4">
-          Page Not Found
+          {t("title")}
         </h2>
         <p className="text-gray-600 mb-8 text-sm md:text-base">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+          {t("paragraph")}
         </p>
       </div>
     </div>

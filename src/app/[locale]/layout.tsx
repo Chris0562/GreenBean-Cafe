@@ -1,6 +1,11 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
+
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -80,13 +85,20 @@ export const viewport: Viewport = {
   themeColor: "#f6f1ed",
 };
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
-    <html lang="en" className={quicksand.variable}>
+    <html lang={locale} className={quicksand.variable}>
       <head>
         <link
           rel="icon"
@@ -109,10 +121,13 @@ export default function RootLayout({
         selection:text-deep-teal
       `}
       >
-        <Navbar />
-        <main className="flex-1 focus-within:outline-none">{children}</main>
-        <Footer />
-        <SpeedInsights />
+        <NextIntlClientProvider>
+          <Navbar />
+          <main className="flex-1 focus-within:outline-none">{children}</main>
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

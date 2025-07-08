@@ -1,0 +1,61 @@
+{
+  "HomePage": {
+    "HeroParagraph": "Un caloroso benvenuto. Un caffè migliore.",
+    "About": {
+      "title": "Un momento di riposo",
+      "paragraph": "Nel cuore della città, GreenBean Café porta il profumo del vero caffè italiano e dei dolci artigianali in uno spazio accogliente e tranquillo. Che tu stia iniziando la giornata o recuperando il tempo con gli amici, ti offriamo un'esperienza da gustare."
+    },
+    "Showcase": {
+      "title": "Preparato con cura",
+      "paragraph": "I nostri chicchi vengono tostati lentamente per esaltarne i sapori più intensi. Ogni tazza è preparata con passione, e la nostra selezione di dolci è scelta con cura da ricette tradizionali italiane."
+    },
+    "MenuPreview": {
+      "title": "Nel menù",
+      "pastries": "Dolci di giornata, appena sfornati",
+      "coffee": "Espresso, cappuccino e tanto altro"
+    },
+    "BtnMenu": "Menù completo",
+    "VisitUs": "Vieni a trovarci",
+    "AddressTitle": "Dove siamo",
+    "Hours": {
+      "title": "Orari di apertura",
+      "monFri": "Lunedì - Venerdì: 8:00 - 19:00",
+      "sat": "Sabato: 9:00 - 18:00",
+      "sun": "Domenica: Chiuso"
+    }
+  },
+  "About": {
+    "title": "Un angolo tranquillo nel cuore della città",
+    "paragraph1": "Allontanati dal caos e lasciati avvolgere dal nostro calore. Qui il tempo scorre più lentamente, le conversazioni si fanno più profonde e ogni tazza racconta una storia.",
+    "paragraph2": "Che tu stia cercando un momento di solitudine con un buon libro o un incontro con vecchi amici, il nostro spazio ti invita a fermarti, respirare e goderti il piacere semplice di un momento perfettamente preparato."
+  },
+  "Menu": {},
+  "HoursAndLocation": {
+    "title": "Contattaci",
+    "paragraph": "Siamo sempre felici di sentirti",
+    "Strong": {
+      "phone": "Telefono:",
+      "address": "Indirizzo:",
+      "hours": "Orari:"
+    },
+    "hours": "Lun - Ven: 8:00 - 19:00 | Sab: 9:00 - 19:00 | Dom: 8:00 - 14:00"
+  },
+  "Events": {
+    "title": "Eventi al GreenBean Café",
+    "paragraph": "Vieni per il caffè, resta per la comunità.",
+    "reservation": "Prenotazione obbligatoria - chiama o scrivi per partecipare"
+  },
+  "CafeFooter": {
+    "title": "Ogni tazza racconta una storia"
+  },
+  "Navbar": {
+    "about": "Chi siamo",
+    "menu": "Menù",
+    "hoursAndLocation": "Orari e posizione",
+    "events": "Eventi"
+  },
+  "NotFound": {
+    "title": "Pagina non trovata",
+    "paragraph": "La pagina che stai cercando non esiste o è stata spostata."
+  }
+}
