@@ -8,6 +8,8 @@ Server-Side Rendering (SSR) and Static Site Generation (SSG) with Next.js 15 app
 - SEO-friendly metadata and social sharing setup
 - Analytics and performance monitoring integrated
 
+More coming in the future, whenever i get the time to do so
+
 ## Deployment
 This project is deployed on Vercel:
 https://green-bean-cafe.vercel.app
