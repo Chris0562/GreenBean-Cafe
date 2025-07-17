@@ -72,7 +72,7 @@ export default function HomePage() {
           {t("MenuPreview.title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
-          <div>
+          <div className="px-4 sm:px-6 lg:px-8 mb-6 md:mb-0">
             <div className="relative aspect-[3/2] w-full rounded shadow overflow-hidden">
               <Image
                 src="/images/pastry.jpg"
@@ -87,7 +87,8 @@ export default function HomePage() {
               {t("MenuPreview.pastries")}
             </p>
           </div>
-          <div>
+
+          <div className="px-4 sm:px-6 lg:px-8">
             <div className="relative aspect-[3/2] w-full rounded shadow overflow-hidden">
               <Image
                 src="/images/espresso.jpg"
@@ -102,10 +103,11 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+
         <div className="text-center mt-6 sm:mt-8 lg:mt-10">
           <Link
             href="/menu"
-            className="inline-block bg-deep-teal text-light-cream px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-deep-teal/90 transition text-sm sm:text-base"
+            className="inline-block bg-deep-teal text-light-cream px-6 sm:px-6 lg:px-8 py-3 sm:py-3 lg:py-4 rounded hover:bg-deep-teal/90 transition text-base sm:text-base lg:text-lg"
           >
             {t("BtnMenu")}
           </Link>
