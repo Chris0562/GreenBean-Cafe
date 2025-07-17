@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 
+import Map from "@/components/Map";
+
 export default function ContactInfo() {
   const t = useTranslations("HoursAndLocation");
 
@@ -29,14 +31,15 @@ export default function ContactInfo() {
             </a>
           </p>
           <p>
-            <strong>{t("Strong.address")}</strong> 123 Main Street, New York
-          </p>
-          <p>
             <strong>{t("Strong.hours")}</strong>
             {t("hours")}
           </p>
+          <p>
+            <strong>{t("Strong.address")}</strong> 123 Main Street, New York
+          </p>
         </div>
       </div>
+      <Map />
     </section>
   );
 }
