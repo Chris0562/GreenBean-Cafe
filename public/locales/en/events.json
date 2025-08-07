@@ -16,5 +16,11 @@
     "date": "Every Tuesday · 16:00 - 18:00",
     "description": "Sample three rotating blends and discover new flavor profiles.",
     "requiresReservation": true
+  },
+  {
+    "title": "test en",
+    "date": "date en",
+    "description": "123 en",
+    "requiresReservation": true
   }
 ]
