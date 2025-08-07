@@ -16,5 +16,11 @@
     "date": "Ogni martedì · 16:00 - 18:00",
     "description": "Assaggia tre miscele a rotazione e scopri nuovi profili aromatici.",
     "requiresReservation": true
+  },
+  {
+    "title": "test it",
+    "date": "date it",
+    "description": "123 it",
+    "requiresReservation": true
   }
 ]
