@@ -1,0 +1,4 @@
+id,titleEN,titleIT,dateEN,dateIT,descEN,descIT,requiresReservation
+1,Acoustic Sundays,Domeniche Acustiche,"Every Sunday · 10:00 - 13:00","Ogni domenica · 10:00 - 13:00","Enjoy live acoustic guitar with your morning espresso and croissant.","Goditi una chitarra acustica dal vivo con il tuo espresso e cornetto del mattino.",false
+2,Latte Art Workshop,Corso di Latte Art,"July 20 · 15:00 - 17:00","20 luglio · 15:00 - 17:00","Learn the basics of latte art from our baristas. Limited spots!","Impara le basi della latte art con i nostri baristi. Posti limitati!",true
+3,Tasting Tuesdays,Martedì di Degustazione,"Every Tuesday · 16:00 - 18:00","Ogni martedì · 16:00 - 18:00","Sample three rotating blends and discover new flavor profiles.","Assaggia tre miscele a rotazione e scopri nuovi profili aromatici.",true

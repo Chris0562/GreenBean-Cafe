@@ -1,29 +1,44 @@
-import fs from "fs/promises";
-import path from "path";
+import { supabase } from "../../../lib/supabaseclient";
 import { getLocale, getTranslations } from "next-intl/server";
 
-type Event = {
-  title: string;
-  date: string;
-  description: string;
+type EventFromDB = {
+  id: number;
+  titleEN: string;
+  titleIT: string;
+  dateEN: string;
+  dateIT: string;
+  descEN: string;
+  descIT: string;
   requiresReservation: boolean;
 };
 
-async function getEvents(locale: string): Promise<Event[]> {
-  const filePath = path.join(
-    process.cwd(),
-    "public/locales",
-    locale,
-    "events.json"
-  );
-  const file = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(file);
-}
-
-export default async function EventsSection() {
+export default async function EventsPage() {
   const locale = await getLocale();
   const t = await getTranslations("Events");
-  const events = await getEvents(locale);
+
+  console.log("Fetching events from Supabase (server-side)...");
+
+  const { data: events, error } = await supabase
+    .from<"events", EventFromDB>("events")
+    .select("*");
+
+  if (error) {
+    console.error("Supabase error:", error);
+    return <p>Error loading events.</p>;
+  }
+
+  console.log("Events fetched:", events);
+
+  if (!events) {
+    return <p>No events found.</p>;
+  }
+
+  const localizedEvents = events.map((ev) => ({
+    title: locale === "it" ? ev.titleIT : ev.titleEN,
+    date: locale === "it" ? ev.dateIT : ev.dateEN,
+    description: locale === "it" ? ev.descIT : ev.descEN,
+    requiresReservation: ev.requiresReservation,
+  }));
 
   return (
     <section className="bg-light-cream text-deep-teal py-10 px-4">
@@ -34,9 +49,9 @@ export default async function EventsSection() {
         </p>
 
         <ul className="space-y-8">
-          {events.map((event, index) => (
+          {localizedEvents.map((event, i) => (
             <li
-              key={index}
+              key={i}
               className="bg-deep-teal text-light-cream px-6 py-6 rounded-2xl shadow-md"
             >
               <h3 className="text-xl font-medium mb-1">{event.title}</h3>

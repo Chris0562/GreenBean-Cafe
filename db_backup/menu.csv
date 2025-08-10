@@ -1,0 +1,41 @@
+id,category,name,price,descEN,descIT
+1,pastries,Cannoli,6.07,Ricotta-filled pastry shell,Cialda croccante ripiena di ricotta
+2,pastries,Tiramisù,2.68,Coffee-flavored layered dessert,Dessert a strati al gusto di caffè
+3,pastries,Sfogliatella,4.15,Crispy layered pastry with ricotta,Pasta sfoglia croccante ripiena di ricotta
+4,pastries,Baba al Rum,4.71,Rum-soaked sponge cake,Pan di spagna imbevuto di rum
+5,pastries,Crostata,4.82,Fruit jam tart,Crostata alla marmellata di frutta
+6,pastries,Zeppole,2.3,Cream-filled fried dough,Pasta fritta ripiena di crema
+7,pastries,Castagnole,1.84,Fried dough balls with sugar,Palline di pasta fritta zuccherate
+8,pastries,Panettone,7.44,Sweet bread with raisins,Pane dolce con uvetta
+9,pastries,Pandoro,5.25,Golden Christmas cake,Dolce natalizio soffice e dorato
+10,pastries,Bombolone,2.45,Jam or cream-filled doughnut,Ciambella ripiena di marmellata o crema
+11,pastries,Pasticciotto,2.15,Creamy custard-filled tart,Tortina ripiena di crema pasticcera
+12,pastries,Maritozzo,3.1,Sweet bun with whipped cream,Panino dolce con panna montata
+13,pastries,Amaretti,3.23,Soft almond cookies,Biscotti morbidi alle mandorle
+14,pastries,Ricciarelli,2.6,Traditional Siena almond cookies,Biscotti alle mandorle tipici di Siena
+15,pastries,Biscotti,3.77,Crunchy almond biscuits,Biscotti croccanti alle mandorle
+16,pastries,Torta Caprese,6.26,Chocolate and almond cake,Torta al cioccolato e mandorle
+17,pastries,Struffoli,2.4,Honey-coated fried dough balls,Palline di pasta fritta ricoperte di miele
+18,pastries,Ciambella,4.17,Ring-shaped soft cake,Dolce soffice a forma di anello
+19,pastries,Frittelle,5.66,Sugar-dusted fried pastry,Pasticcini fritti con zucchero
+20,pastries,Cantucci,2.48,Crunchy almond cookies from Tuscany,Biscotti croccanti alle mandorle della Toscana
+21,coffee,Espresso,4.0,Strong, concentrated coffee shot,Caffè forte e concentrato
+22,coffee,Cappuccino,2.59,Espresso with steamed milk and foam,Espresso con latte caldo e schiuma
+23,coffee,Macchiato,2.2,Espresso with milk foam,Espresso con una goccia di schiuma di latte
+24,coffee,Latte,2.87,Steamed milk with espresso,Latte caldo con espresso
+25,coffee,Mocha,2.58,Chocolate and espresso blend,Miscela di cioccolato ed espresso
+26,coffee,Ristretto,2.95,Short, strong espresso shot,Espresso corto e intenso
+27,coffee,Lungo,4.57,Mild long-pour espresso,Espresso allungato e delicato
+28,coffee,Affogato,5.67,Espresso over vanilla gelato,Espresso versato su gelato alla vaniglia
+29,coffee,Caffè Corretto,4.38,Espresso with liquor,Espresso corretto con liquore
+30,coffee,Caffè Freddo,4.27,Chilled sweet espresso,Espresso dolce servito freddo
+31,coffee,Caffè Shakerato,6.27,Shaken iced espresso,Espresso shakerato con ghiaccio
+32,coffee,Americano,3.71,Espresso diluted with hot water,Espresso diluito con acqua calda
+33,coffee,Caffè Ginseng,3.47,Ginseng-flavored espresso,Espresso al gusto di ginseng
+34,coffee,Marocchino,6.19,Espresso with cocoa and foam,Espresso con cacao e schiuma di latte
+35,coffee,Bicerin,7.89,Espresso, chocolate, and cream,Espresso con cioccolato e panna
+36,coffee,Flat White,5.15,Smooth double shot with foam,Doppio espresso con schiuma morbida
+37,coffee,Cold Brew,5.59,Slow-steeped cold coffee,Caffè freddo a infusione lenta
+38,coffee,Doppio,4.26,Double espresso shot,Doppia dose di espresso
+39,coffee,Espresso con Panna,2.09,Espresso topped with whipped cream,Espresso con panna montata
+40,coffee,Caffè al Pistacchio,5.74,Espresso with pistachio cream,Espresso con crema al pistacchio

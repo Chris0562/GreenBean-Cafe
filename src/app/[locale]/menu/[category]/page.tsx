@@ -1,26 +1,7 @@
+import { supabase } from "../../../../lib/supabaseclient";
 import { setRequestLocale } from "next-intl/server";
-import fs from "fs/promises";
-import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-
-type MenuItem = {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-};
-
-type MenuData = {
-  coffee: {
-    title: string;
-    items: MenuItem[];
-  };
-  pastries: {
-    title: string;
-    items: MenuItem[];
-  };
-};
 
 const VALID_CATEGORIES = ["coffee", "pastries"] as const;
 type Category = (typeof VALID_CATEGORIES)[number];
@@ -32,35 +13,21 @@ export async function generateStaticParams() {
   );
 }
 
+type MenuItemFromDB = {
+  id: number;
+  category: "coffee" | "pastries";
+  name: string;
+  price: number;
+  descEN: string;
+  descIT: string;
+};
+
 type Props = {
   params: Promise<{
     locale: string;
     category: string;
   }>;
 };
-
-async function getMenuData(locale: string): Promise<MenuData> {
-  const filePath = path.join(
-    process.cwd(),
-    "public/locales",
-    locale,
-    "menu.json"
-  );
-
-  try {
-    const fileData = await fs.readFile(filePath, "utf-8");
-    const parsed = JSON.parse(fileData);
-
-    if (!parsed.coffee || !parsed.pastries) {
-      throw new Error("Invalid menu structure");
-    }
-
-    return parsed;
-  } catch (err) {
-    console.error(`Failed to load menu data for locale "${locale}":`, err);
-    throw err;
-  }
-}
 
 export default async function MenuCategoryPage({ params }: Props) {
   const { locale, category } = await params;
@@ -71,14 +38,34 @@ export default async function MenuCategoryPage({ params }: Props) {
 
   setRequestLocale(locale);
 
-  const menu = await getMenuData(locale);
-  const categoryData = menu[category as Category];
+  const { data, error } = await supabase
+    .from("menu")
+    .select("id, category, name, price, descEN, descIT")
+    .eq("category", category as Category);
 
-  if (!categoryData || categoryData.items.length === 0) {
+  const items = data as MenuItemFromDB[] | null;
+
+  if (error) {
+    console.error("Supabase menu fetch error:", error);
+    return <p>Error loading menu.</p>;
+  }
+
+  if (!items || items.length === 0) {
     return notFound();
   }
 
-  const { title, items } = categoryData;
+  const localizedItems = items.map((item) => ({
+    id: item.id,
+    name: item.name,
+    price: item.price,
+    description: locale === "it" ? item.descIT : item.descEN,
+  }));
+
+  const categoryTitles = {
+    coffee: locale === "it" ? "Caffetteria" : "Coffee",
+    pastries: locale === "it" ? "Pasticceria" : "Pastries",
+  };
+  const title = categoryTitles[category as Category];
 
   return (
     <div className="min-h-screen px-4 py-10 bg-light-cream text-deep-teal">
@@ -101,7 +88,7 @@ export default async function MenuCategoryPage({ params }: Props) {
                 }
               `}
             >
-              {menu[cat].title}
+              {categoryTitles[cat]}
             </Link>
           ))}
         </div>
@@ -109,11 +96,11 @@ export default async function MenuCategoryPage({ params }: Props) {
         {/* Menu List */}
         <div className="max-w-2xl mx-auto bg-deep-teal text-light-cream rounded-2xl shadow-2xl px-8 py-12">
           <ul className="space-y-8">
-            {items.map((item, index) => (
+            {localizedItems.map((item, index) => (
               <li
                 key={item.id}
                 className={`pb-6 ${
-                  index !== items.length - 1
+                  index !== localizedItems.length - 1
                     ? "border-b border-light-cream/20"
                     : ""
                 }`}

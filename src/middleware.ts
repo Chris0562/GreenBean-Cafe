@@ -1,16 +1,39 @@
+import { withAuth } from "next-auth/middleware";
 import createMiddleware from "next-intl/middleware";
-import { routing } from "./i18n/routing";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware({
+  locales: ["en", "it"],
+  defaultLocale: "en",
+});
+
+export default withAuth(
+  function middleware(req) {
+    if (!req.nextUrl.pathname.startsWith("/admin")) {
+      return intlMiddleware(req);
+    }
+  },
+  {
+    callbacks: {
+      authorized: ({ token, req }) => {
+        const path = req.nextUrl.pathname;
+
+        if (path === "/admin/login") {
+          return true;
+        }
+
+        if (path.startsWith("/admin")) {
+          return !!token?.role || !!token;
+        }
+
+        return true;
+      },
+    },
+    pages: {
+      signIn: "/admin/login",
+    },
+  }
+);
 
 export const config = {
-  matcher: [
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
-
-    // Match all pathnames within `{/:locale}/users`
-    "/([\\w-]+)?/users/(.+)",
-  ],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|images).*)"],
 };

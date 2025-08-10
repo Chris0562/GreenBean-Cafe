@@ -34,7 +34,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Image Container */}
           <div className="relative">
             <div
               className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -54,7 +53,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Background decorative element */}
             <div
               className="absolute -z-10 -top-8 -left-8 w-32 h-32 rounded-full opacity-10"
               style={{ backgroundColor: "#0d4f4f" }}

@@ -91,22 +91,24 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 shadow-sm bg-light-cream text-deep-teal">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-8 py-5">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="transition-transform duration-300 hover:scale-105"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <div className="relative w-30 h-10">
-            <Image
-              src="/images/gbname.png"
-              alt="GreenBean Café"
-              width={120}
-              height={40}
-              priority
-            />
-          </div>
-        </Link>
+        <div className="flex items-center">
+          <Link
+            href="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center"
+          >
+            <div className="relative w-32 md:w-36 aspect-[3/1]">
+              <Image
+                src="/images/gbname.png"
+                alt="GreenBean Café"
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 128px, 144px"
+              />
+            </div>
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-8 text-lg font-light text-first items-center">
@@ -120,7 +122,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={switchLanguage}
-              className="uppercase text-sm border border-deep-teal px-3 py-1 rounded-full transition-colors hover:bg-deep-teal hover:text-light-cream"
+              className="uppercase text-sm border border-deep-teal px-3 py-1 rounded-full transition-colors hover:bg-deep-teal hover:text-light-cream hover:cursor-pointer"
             >
               {otherLocale}
             </button>
