@@ -1,22 +1,96 @@
-## Overview
-This is a portfolio project that i've made with the intention of practicing my next.js skills.
+## Green Bean Café ☕
+A full-stack, multilingual café website built with Next.js 15 App Router
 
-## Features
-Server-Side Rendering (SSR) and Static Site Generation (SSG) with Next.js 15 app router
-- Responsive design
-- Multi-language support using next-intl
-- SEO-friendly metadata and social sharing setup
-- Analytics and performance monitoring integrated
+## 📌 Overview
+Green Bean Café is a portfolio project I created to demonstrate my full-stack Next.js skills and ability to build production-ready web applications.
+It features a fully responsive design, multi-language support, real-time content updates via ISR, and a secure admin panel for managing events and menus, powered by Supabase and NextAuth.
 
-More coming in the future, whenever i get the time to do so
+## 🧩 Key Skills Demonstrated
 
-## Deployment
-This project is deployed on Vercel:
-https://green-bean-cafe.vercel.app
+- Full-stack development with Next.js 15 (App Router)
 
-## Getting Started
+- Authentication & security using NextAuth
 
-First, run the development server:
+- Database integration with Supabase (PostgreSQL)
+
+- CRUD API design with Next.js API routes
+
+- Incremental Static Regeneration (ISR) for real-time updates
+
+- Responsive, multilingual UI with next-intl (English/Italian)
+
+- SEO optimization and metadata management
+
+- Deployment & hosting on Vercel
+
+## ✨ Features
+Frontend
+- Next.js 15 App Router — Utilizes SSR, SSG, and ISR for performance and SEO.
+
+- Multi-language support — Powered by next-intl with instant English ↔ Italian switching.
+
+- Responsive design — Optimized for mobile, tablet, and desktop.
+
+- SEO & social metadata — Automatically generated for better discoverability.
+
+Backend & Security
+- Supabase (PostgreSQL) — Stores bilingual menu and event data.
+
+- Custom CRUD API — Built with Next.js API routes to manage content.
+
+- Authentication via NextAuth — Admin panel access restricted to authorized users.
+
+- Protected API routes — All write operations require server-side authentication checks.
+
+Performance & Monitoring
+- Analytics integration — Tracks usage and performance.
+
+- ISR — Updates only the changed pages without a full rebuild.
+
+## 🛠 How It Works
+- The admin panel is located at:
+https://green-bean-cafe.vercel.app/admin
+(Login is required; visitors can view the code in this repository to see how it works.)
+
+- Admins can create, edit, and delete menu items and events in both English and Italian.
+
+- Changes are stored in a Supabase database and automatically reflected on the public site via Incremental Static Regeneration.
+
+- Public pages are pre-rendered for speed, with server updates pushed in the background when data changes.
+
+## 🚀 Tech Stack
+- Frontend: Next.js 15 (App Router), React, next-intl
+
+- Backend: Supabase (PostgreSQL), Next.js API Routes
+
+- Authentication: NextAuth
+
+- Deployment: Vercel (automatic builds + ISR)
+
+## 🌐 Live Demo
+[https://green-bean-cafe.vercel.app](https://green-bean-cafe.vercel.app)
+
+## 🛠 Getting Started
+Clone the repo:
+
+```bash
+git clone https://github.com/yourusername/green-bean-cafe.git
+cd green-bean-cafe
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -28,4 +102,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
