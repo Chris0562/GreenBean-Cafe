@@ -2,8 +2,10 @@
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -13,14 +15,15 @@ export default function LoginPage() {
     setError("");
 
     const res = await signIn("credentials", {
-      redirect: true,
+      redirect: false,
       username,
       password,
-      callbackUrl: "/admin",
     });
 
     if (res?.error) {
       setError("Invalid username or password");
+    } else {
+      router.push("/admin");
     }
   };
 
